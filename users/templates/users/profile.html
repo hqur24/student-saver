@@ -1,0 +1,6 @@
+{%extends "blog/base.html"%}
+{%block content%}
+  <h5> User currently logged in : </h5> <h4> {{user.username}}</h4>
+  <h5> Your current access level is: </h5> <h4> {{user.profile.access }}</h4>
+  <h5> You are in: </h5> <h4> {{user.profile.yeargroup }}</h4>
+{%endblock content%}

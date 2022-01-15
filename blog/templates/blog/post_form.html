@@ -1,0 +1,22 @@
+{%extends "blog/base.html"%}
+{% load crispy_forms_tags %}
+{%block content%}
+  {% if request.user.profile.access == "Student" %}
+  <h4> You don't have access to this page </h4>
+  {% else %}
+   <div class="container">
+      <form method = "POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <legend class = "border-bottom mb-4"> Set New Homework Task </legend>
+          {{ form|crispy }}
+        </fieldset>
+        <div class ="form group">
+          <br>
+          <button type="submit" class="btn btn-success"> Set Task</button>
+        </div>
+      </form>
+
+    </div> -
+    {% endif %}
+{%endblock content%}

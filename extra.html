@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Student Saver</h1>
+
+
+    {% endif %}
+
+    <div class="container" id="homework-background">
+
+    <div class="row">
+    <div class="col-md-8">
+
+      <form method="post" action="/login/">
+        {% csrf_token %}
+        <div class="row justify-content-center">
+        <div id="login-box" >
+        <div class="form-group">
+            <div class="login-text mb-2" >Login for Access</div>
+
+        <p>
+                <label for="id_username">Username</label>
+                <input class="form-control" id="id_username" name="username" autofocus=""  type="text" required>
+            </p>
+        <p>
+                <label for="id_password">Password</label>
+                <input class="form-control" id="id_password" name="password" type="password" required>
+            </p>
+      <button type="submit" class="btn btn-primary mt-2 mb-2">Login</button>    </div>
+      <a href="#" data-toggle="tooltip" data-placement="bottom" title=" Please contact your IT Administrator at college for information on how to reset your password">Forgot Password?</a>
+
+      </div>
+      </div>
+    </form>
+    
+              </div>
+
+            <div class="col-md-4">
+                <h3>ToDo List</h3>
+
+                <p class='text-muted'>You can put any information here you'd like.
+                  <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Posts</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li>
+                  </ul>
+                </p>
+              </div>
+            </div>
+    </div>
+
+  </body>
+</html>

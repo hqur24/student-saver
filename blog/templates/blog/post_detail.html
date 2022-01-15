@@ -1,0 +1,22 @@
+{%extends "blog/base.html"%}
+{%block content%}
+<article class="media content-section">
+<div class="media-body">
+ <div class="article-metadata">
+   <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+   <a class="mr-2" href="{% url 'subject-posts' post.subject %}">{{ post.subject }}</a>
+   <small class="text-muted">Task Due:{{ post.date_due|date:"d F, Y" }}</small>
+   <small class="text-muted">Task set:{{ post.date_posted|date:"d F, Y" }}</small>
+   {% if object.author == user %}
+   <div class="mt-2 mb-2">
+   <a class="btn btn-warning" href="{% url 'post-update' object.id %}">Update</a>
+   <a class="btn btn-danger" href="{% url 'post-delete' object.id %}">Delete</a>
+   </div>
+   {% endif %}
+ </div>
+ <h2 class="article-title">{{ object.title }}</h2>
+ <p class="article-content">{{ object.content }}</p>
+</div>
+</article>
+
+{%endblock content%}
